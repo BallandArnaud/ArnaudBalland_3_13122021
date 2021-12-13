@@ -1,0 +1,19 @@
+{
+  "name": "arnaudballand_3_13122021",
+  "version": "1.0.0",
+  "description": "Projet P3 Ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/style.scss ./style/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BallandArnaud/ArnaudBalland_3_13122021.git"
+  },
+  "author": "Arnaud Balland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BallandArnaud/ArnaudBalland_3_13122021/issues"
+  },
+  "homepage": "https://github.com/BallandArnaud/ArnaudBalland_3_13122021#readme"
+}
