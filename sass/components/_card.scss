@@ -87,4 +87,9 @@
             transform: scale(1);
         }
     }
+
+    @include tablet{
+        width: 49%;
+        margin: 1% 0;
+    }
 }

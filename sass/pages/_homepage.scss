@@ -50,8 +50,15 @@
         list-style-type: none;
         counter-reset: compteListe;
         padding: 0;
+
+        @include tablet{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
-    
+
     &__step{
         position: relative;
         background-color: $background-secondary;
@@ -92,6 +99,16 @@
             left: -15px;
             top: 20px;
         }
+
+        @include tablet{
+            width: 30%;
+            margin: 0;
+            align-items: center;
+
+            &:first-child{
+                margin-left: 10px;
+            }
+        }
     }
 
     &__icon{
@@ -111,5 +128,11 @@
     .cards{
         display: flex;
         flex-direction: column;
+
+        @include tablet{
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 }
