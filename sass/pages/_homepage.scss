@@ -1,0 +1,115 @@
+.functioning,.restaurants{
+    padding: 50px 25px;
+
+    &__title{
+        margin-top: 0;
+    }
+}
+
+.location{
+    background-color: darken($background-secondary, 5%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+
+    &__icon{
+        margin-right: 15px;
+    }
+
+    &__text{
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        font-size: 1rem;
+        width: 130px;
+    }
+}
+
+.hero{
+    text-align: center;
+
+    &__resume{
+        background-color: $background-secondary;
+        padding: 50px 25px;
+    }
+
+    &__title{
+        margin-top: 0;
+    }
+
+    &__subtitle{
+        color: lighten($text-color-primary, 40%);
+        margin-bottom: 2rem;
+    }
+}
+
+.functioning{
+
+    &__steps{
+        list-style-type: none;
+        counter-reset: compteListe;
+        padding: 0;
+    }
+    
+    &__step{
+        position: relative;
+        background-color: $background-secondary;
+        margin: 20px 0 20px 10px;
+        padding: 25px 20px;
+        border-radius: 20px;
+        box-shadow: 1px 3px 6px rgba(30,30,30,0.2);
+        display: flex;
+
+        &:hover{
+            background-color: lighten($color-primary, 35%);
+
+            & > .functioning__icon{
+                color: $color-primary;
+            }
+        }
+
+        &:first-child{
+            margin-top: 0;
+        }
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+
+        &::before{
+            counter-increment: compteListe;
+            content: counter(compteListe) " ";
+            background-color: $color-primary;
+            color: $text-color-secondary;
+            border-radius: 100%;
+            position: absolute;
+            display: flex;
+            width: 30px;
+            height: 30px;
+            justify-content: center;
+            align-items: center;
+            left: -15px;
+            top: 20px;
+        }
+    }
+
+    &__icon{
+        color: darken($background-secondary, 47%);
+        margin: 0 15px;
+        font-size: 1.3rem;
+    }
+
+    &__text{
+        font-weight: bold;
+    }
+}
+
+.restaurants{
+    background-color: $background-secondary;
+
+    .cards{
+        display: flex;
+        flex-direction: column;
+    }
+}
