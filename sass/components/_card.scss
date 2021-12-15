@@ -93,3 +93,74 @@
         margin: 1% 0;
     }
 }
+
+
+
+.menu-card{
+    background-color: $background-primary;
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-in-out 0s 1 forwards;
+
+    &:hover &__add{
+        margin-right: 0;
+    }
+
+    &:hover &__add__icon{
+        transform: rotate(360deg);
+    }
+
+    &__caption{
+        padding: 1rem;
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    &__title, &__description {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: clip ellipsis;
+    }
+    
+    &__title{
+        margin: 0 0 0.5rem 0;
+    }
+    
+    &__description{
+        font-weight: 300;
+        margin: 0;
+    }
+    
+    &__price{
+        font-weight: bold;
+        padding: 1rem;
+        display: flex;
+        align-items: flex-end;
+    }
+    
+    &__add{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-tertiary;
+        width: 60px;
+        height: auto;
+        margin-right: -60px;
+        transition: margin .4s ease-in-out;
+    
+        &__icon{
+            font-size: 1.5rem;
+            color: $text-color-secondary;
+            transform: rotate(90deg);
+            transition: transform .4s .15s ease-in-out;
+        }
+    }
+}

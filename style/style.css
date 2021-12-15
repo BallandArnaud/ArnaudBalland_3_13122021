@@ -1,3 +1,13 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -367,6 +377,7 @@ a {
   position: relative;
   display: inline-block;
   padding: 15px 20px;
+  margin: auto;
   cursor: pointer;
   border: 0;
   border-radius: 30px;
@@ -382,22 +393,38 @@ a {
   border-radius: inherit;
   top: 0;
   left: 0;
-  box-shadow: 1px 3px 10px rgba(30, 30, 30, 0.4);
+  box-shadow: 2px 3px 8px rgba(30, 30, 30, 0.4);
   opacity: 0;
   transition: opacity 0.3s;
 }
 .btn--shadow:hover::after {
   opacity: 1;
 }
-.btn--hero {
+.btn--primary {
   color: #fff;
   background: #FF79DA;
   background: linear-gradient(170deg, #FF79DA 0%, #9356DC 100%);
-  transition: background-color 0.3s;
+  z-index: 0;
 }
-.btn--hero:hover {
+.btn--primary::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
   background: #ff83dd;
   background: linear-gradient(170deg, #ff83dd 0%, #985ede 100%);
+}
+.btn--primary:hover::after {
+  opacity: 1;
+}
+.btn--large {
+  padding: 15px 50px;
 }
 
 .card {
@@ -483,12 +510,86 @@ a {
   }
 }
 
+.menu-card {
+  background-color: #fff;
+  display: flex;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-in-out 0s 1 forwards;
+}
+.menu-card:hover .menu-card__add {
+  margin-right: 0;
+}
+.menu-card:hover .menu-card__add__icon {
+  transform: rotate(360deg);
+}
+.menu-card__caption {
+  padding: 1rem;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.menu-card__title, .menu-card__description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip ellipsis;
+}
+.menu-card__title {
+  margin: 0 0 0.5rem 0;
+}
+.menu-card__description {
+  font-weight: 300;
+  margin: 0;
+}
+.menu-card__price {
+  font-weight: bold;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-end;
+}
+.menu-card__add {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  width: 60px;
+  height: auto;
+  margin-right: -60px;
+  transition: margin 0.4s ease-in-out;
+}
+.menu-card__add__icon {
+  font-size: 1.5rem;
+  color: #fff;
+  transform: rotate(90deg);
+  transition: transform 0.4s 0.15s ease-in-out;
+}
+
 .header {
   position: relative;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 15px 0;
   z-index: 10;
   box-shadow: 0 2px 5px rgba(30, 30, 30, 0.3);
+}
+.header__backhome {
+  position: absolute;
+  left: 10px;
+}
+.header__arrow {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer {
@@ -647,6 +748,95 @@ a {
     flex-direction: row;
     justify-content: space-between;
   }
+}
+
+.menupage {
+  background-color: #f6f6f6;
+}
+.menupage__img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+.menupage__container {
+  background-color: #f6f6f6;
+  position: relative;
+  top: -50px;
+  border-radius: 40px 40px 0 0;
+  max-width: 1024px;
+  margin: auto;
+  padding: 20px 15px;
+}
+.menupage__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menupage__maintitle {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.5rem;
+}
+.menupage__subtitle {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+.menupage__subtitle::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  background-color: #99E2D0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+}
+.menupage__menus {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+.menupage__button {
+  text-align: center;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+.delay-4 {
+  animation-delay: 0.8s;
+}
+
+.delay-5 {
+  animation-delay: 1s;
+}
+
+.delay-6 {
+  animation-delay: 1.2s;
+}
+
+.delay-7 {
+  animation-delay: 1.4s;
+}
+
+.delay-8 {
+  animation-delay: 1.6s;
+}
+
+.delay-9 {
+  animation-delay: 1.8s;
 }
 
 /*# sourceMappingURL=style.css.map */

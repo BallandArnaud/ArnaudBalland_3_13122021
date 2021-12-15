@@ -1,5 +1,6 @@
 @import "./utils/variables";
 @import "./utils/mixins";
+@import "./utils/animations";
 @import "./vendors/normalize";
 @import "./base/base";
 // @import "./base/typography";
@@ -8,4 +9,5 @@
 @import "./layouts/header";
 @import "./layouts/footer";
 @import "./pages/homepage";
+@import "./pages/menupage";
 
