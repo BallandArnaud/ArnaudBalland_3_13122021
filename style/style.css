@@ -763,8 +763,8 @@ a {
   position: relative;
   margin: -50px auto 0;
   border-radius: 40px 40px 0 0;
-  max-width: 1024px;
-  padding: 20px 15px 40px;
+  max-width: 1280px;
+  padding: 30px;
 }
 .menupage__header {
   display: flex;
@@ -808,45 +808,52 @@ a {
     width: 33.33%;
     padding: 0 1rem;
   }
+  .menupage__menu:first-child {
+    padding-left: 0;
+  }
+  .menupage__menu:last-child {
+    padding-right: 0;
+  }
 }
 .menupage__button {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .delay-1 {
-  animation-delay: 0.2s;
+  animation-delay: 0.15s;
 }
 
 .delay-2 {
-  animation-delay: 0.4s;
+  animation-delay: 0.3s;
 }
 
 .delay-3 {
-  animation-delay: 0.6s;
+  animation-delay: 0.45s;
 }
 
 .delay-4 {
-  animation-delay: 0.8s;
+  animation-delay: 0.6s;
 }
 
 .delay-5 {
-  animation-delay: 1s;
+  animation-delay: 0.75s;
 }
 
 .delay-6 {
-  animation-delay: 1.2s;
+  animation-delay: 0.9s;
 }
 
 .delay-7 {
-  animation-delay: 1.4s;
+  animation-delay: 1.05s;
 }
 
 .delay-8 {
-  animation-delay: 1.6s;
+  animation-delay: 1.2s;
 }
 
 .delay-9 {
-  animation-delay: 1.8s;
+  animation-delay: 1.35s;
 }
 
 /*# sourceMappingURL=style.css.map */
