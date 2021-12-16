@@ -71,6 +71,7 @@
             opacity: 0;
             background: linear-gradient($color-primary, $color-secondary);
             background-clip: text;
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -102,6 +103,7 @@
     position: relative;
     margin-bottom: 20px;
     border-radius: 20px;
+    box-shadow: 1px 3px 6px rgba(30,30,30,0.2);
     overflow: hidden;
     cursor: pointer;
     opacity: 0;
@@ -126,7 +128,7 @@
     &__title, &__description {
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: clip ellipsis;
+        text-overflow: ellipsis;
     }
     
     &__title{

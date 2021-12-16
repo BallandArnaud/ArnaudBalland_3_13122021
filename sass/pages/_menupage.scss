@@ -1,10 +1,8 @@
 .menupage{
 
-    background-color: $background-secondary;
-
     &__img{
         width: 100%;
-        max-height: 500px;
+        max-height: 400px;
         object-fit: cover;
         display: block;
     }
@@ -12,11 +10,10 @@
     &__container{
         background-color: $background-secondary;
         position: relative;
-        top:-50px;
+        margin: -50px auto 0;
         border-radius: 40px 40px 0 0;
         max-width: map-get($breakpoints, desktop);
-        margin: auto;
-        padding: 20px 15px;
+        padding: 20px 15px 40px;
     }
 
     &__header{
@@ -53,6 +50,18 @@
         display: flex;
         flex-direction: column;
         margin-bottom: 30px;
+
+        @include desktop{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__menu{
+        @include desktop{
+            width: 33.33%;
+            padding: 0 1rem;
+        }
     }
 
     &__button{

@@ -491,6 +491,7 @@ a {
   opacity: 0;
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .card__heart--nobg {
@@ -516,6 +517,7 @@ a {
   position: relative;
   margin-bottom: 20px;
   border-radius: 20px;
+  box-shadow: 1px 3px 6px rgba(30, 30, 30, 0.2);
   overflow: hidden;
   cursor: pointer;
   opacity: 0;
@@ -537,7 +539,7 @@ a {
 .menu-card__title, .menu-card__description {
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: clip ellipsis;
+  text-overflow: ellipsis;
 }
 .menu-card__title {
   margin: 0 0 0.5rem 0;
@@ -750,23 +752,19 @@ a {
   }
 }
 
-.menupage {
-  background-color: #f6f6f6;
-}
 .menupage__img {
   width: 100%;
-  max-height: 500px;
+  max-height: 400px;
   object-fit: cover;
   display: block;
 }
 .menupage__container {
   background-color: #f6f6f6;
   position: relative;
-  top: -50px;
+  margin: -50px auto 0;
   border-radius: 40px 40px 0 0;
   max-width: 1024px;
-  margin: auto;
-  padding: 20px 15px;
+  padding: 20px 15px 40px;
 }
 .menupage__header {
   display: flex;
@@ -798,6 +796,18 @@ a {
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
+}
+@media screen and (min-width: 1024px) {
+  .menupage__menus {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .menupage__menu {
+    width: 33.33%;
+    padding: 0 1rem;
+  }
 }
 .menupage__button {
   text-align: center;
