@@ -11,9 +11,9 @@
         background-color: $background-secondary;
         position: relative;
         margin: -50px auto 0;
-        border-radius: 40px 40px 0 0;
-        max-width: 1280px;
         padding: 30px;
+        max-width: 1280px;
+        border-radius: 40px 40px 0 0;
     }
 
     &__header{
@@ -37,12 +37,12 @@
 
         &::after{
             content: '';
-            position: absolute;
-            width: 60px;
             background-color: $color-tertiary;
-            height: 3px;
+            position: absolute;
             bottom: 0;
             left: 0;
+            width: 60px;
+            height: 3px;
         }
     }
 
@@ -60,7 +60,7 @@
     &__menu{
         @include desktop{
             width: 33.33%;
-            padding: 0 1rem;
+            padding: 0 15px;
 
             &:first-child{
                 padding-left: 0;
@@ -79,11 +79,9 @@
         
 }
 
-$animationDelay: 0s;
 @for $i from 1 through 9{
-    $animationVariation: 0.15s;
-    $animationDelay: $animationDelay + $animationVariation;
+    $animationStartDelay: $animationStartDelay + $animationVariation;
     .delay-#{$i}{
-        animation-delay: $animationDelay;
+        animation-delay: $animationStartDelay;
     }
 }

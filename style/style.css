@@ -402,10 +402,7 @@ a {
   border: 0;
   border-radius: 30px;
 }
-.btn--shadow {
-  box-shadow: 1px 3px 3px rgba(30, 30, 30, 0.3);
-}
-.btn--shadow::after {
+.btn::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -413,12 +410,18 @@ a {
   border-radius: inherit;
   top: 0;
   left: 0;
-  box-shadow: 2px 3px 8px rgba(30, 30, 30, 0.4);
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease-in-out;
 }
-.btn--shadow:hover::after {
+.btn:hover::after {
   opacity: 1;
+}
+.btn--shadow {
+  box-shadow: 1px 3px 3px rgba(30, 30, 30, 0.3);
+}
+.btn--shadow::after {
+  content: "";
+  box-shadow: 2px 3px 6px rgba(30, 30, 30, 0.4);
 }
 .btn--primary {
   color: #fff;
@@ -428,20 +431,9 @@ a {
 }
 .btn--primary::after {
   content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  top: 0;
-  left: 0;
   z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s;
   background: #ff83dd;
   background: linear-gradient(170deg, #ff83dd 0%, #985ede 100%);
-}
-.btn--primary:hover::after {
-  opacity: 1;
 }
 .btn--large {
   padding: 15px 50px;
@@ -453,10 +445,7 @@ a {
   border-radius: 20px;
   margin-bottom: 20px;
   overflow: hidden;
-  box-shadow: 1px 3px 6px rgba(30, 30, 30, 0.2);
-}
-.card:last-child {
-  margin-bottom: 0;
+  box-shadow: 1px 2px 6px rgba(30, 30, 30, 0.2);
 }
 .card__container {
   position: relative;
@@ -503,6 +492,7 @@ a {
   font-size: 1.4rem;
   position: absolute;
   margin: auto;
+  cursor: pointer;
   transition: opacity 0.4s ease-in-out, transform 0.3s 100ms ease-in-out;
 }
 .card__heart--bg {
@@ -537,7 +527,7 @@ a {
   position: relative;
   margin-bottom: 20px;
   border-radius: 20px;
-  box-shadow: 1px 3px 6px rgba(30, 30, 30, 0.2);
+  box-shadow: 1px 2px 6px rgba(30, 30, 30, 0.2);
   overflow: hidden;
   cursor: pointer;
   opacity: 0;
@@ -551,7 +541,7 @@ a {
   transform: rotate(360deg);
 }
 .menu-card__caption {
-  padding: 1rem;
+  padding: 15px 0 15px 15px;
   flex: 1;
   white-space: nowrap;
   overflow: hidden;
@@ -562,15 +552,16 @@ a {
   text-overflow: ellipsis;
 }
 .menu-card__title {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 10px 0;
 }
 .menu-card__description {
+  font-size: 0.9rem;
   font-weight: 300;
   margin: 0;
 }
 .menu-card__price {
   font-weight: bold;
-  padding: 1rem;
+  padding: 15px;
   display: flex;
   align-items: flex-end;
 }
@@ -593,10 +584,10 @@ a {
 }
 
 .loader {
+  background-color: rgba(255, 255, 255, 0.95);
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
   top: 0;
   display: flex;
   flex-direction: column;
@@ -611,7 +602,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
 }
 .loader__icon {
   font-size: 1.2rem;
@@ -739,7 +730,7 @@ a {
 }
 .hero__subtitle {
   color: #666666;
-  margin-bottom: 2rem;
+  margin-bottom: 30px;
 }
 
 .functioning__steps {
@@ -761,7 +752,7 @@ a {
   margin: 20px 0 20px 10px;
   padding: 25px 20px;
   border-radius: 20px;
-  box-shadow: 1px 3px 6px rgba(30, 30, 30, 0.2);
+  box-shadow: 1px 2px 6px rgba(30, 30, 30, 0.2);
   display: flex;
 }
 .functioning__step:hover {
@@ -778,18 +769,18 @@ a {
 }
 .functioning__step::before {
   counter-increment: compteListe;
-  content: counter(compteListe) " ";
-  background-color: #9356DC;
+  content: counter(compteListe);
   color: #fff;
-  border-radius: 100%;
-  position: absolute;
+  background-color: #9356DC;
   display: flex;
-  width: 30px;
-  height: 30px;
   justify-content: center;
   align-items: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
   left: -15px;
   top: 20px;
+  border-radius: 100%;
 }
 @media screen and (min-width: 768px) {
   .functioning__step {
@@ -835,9 +826,9 @@ a {
   background-color: #f6f6f6;
   position: relative;
   margin: -50px auto 0;
-  border-radius: 40px 40px 0 0;
-  max-width: 1280px;
   padding: 30px;
+  max-width: 1280px;
+  border-radius: 40px 40px 0 0;
 }
 .menupage__header {
   display: flex;
@@ -858,12 +849,12 @@ a {
 }
 .menupage__subtitle::after {
   content: "";
-  position: absolute;
-  width: 60px;
   background-color: #99E2D0;
-  height: 3px;
+  position: absolute;
   bottom: 0;
   left: 0;
+  width: 60px;
+  height: 3px;
 }
 .menupage__menus {
   display: flex;
@@ -879,7 +870,7 @@ a {
 @media screen and (min-width: 1024px) {
   .menupage__menu {
     width: 33.33%;
-    padding: 0 1rem;
+    padding: 0 15px;
   }
   .menupage__menu:first-child {
     padding-left: 0;

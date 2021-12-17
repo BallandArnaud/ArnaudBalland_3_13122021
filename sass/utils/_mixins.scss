@@ -1,10 +1,14 @@
+// Box Shadow
+@mixin box-shadow($x: 1px, $y: 2px, $size: 6px, $color: rgba(30,30,30,0.2)) {
+    box-shadow: $x $y $size $color;
+}
+
 // Media Queries
 @mixin tablet {
     @media screen and (min-width: map-get($breakpoints, tablet)){
         @content;
     }
 }
-
 
 @mixin desktop {
     @media screen and (min-width: map-get($breakpoints, desktop)){
